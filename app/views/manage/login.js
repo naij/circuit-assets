@@ -2,7 +2,6 @@ KISSY.add('app/views/manage/login', function (S, Magix, View, MM) {
   return View.extend({
     render: function () {
       var me = this
-debugger
       me.setViewPagelet()
     },
     'submit<click>': function (e) {

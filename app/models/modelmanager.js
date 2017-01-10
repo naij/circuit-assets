@@ -5,7 +5,7 @@ KISSY.add("app/models/modelmanager", function (S, BaseManager, BaseModel) {
     // 登录
     {
       name: 'login',
-      url: '/api/login.json',
+      url: '/api/user/login.json',
       options: {
         type: 'post'
       }
@@ -13,7 +13,7 @@ KISSY.add("app/models/modelmanager", function (S, BaseManager, BaseModel) {
     // 登出
     {
       name: 'logout',
-      url: '/api/logout.json'
+      url: '/api/user/logout.json'
     }
   ])
 
@@ -21,17 +21,22 @@ KISSY.add("app/models/modelmanager", function (S, BaseManager, BaseModel) {
     // 标签列表
     {
       name: 'tag_list',
-      url: '/api/tag/list.json'
+      url: '/api/blog/tag/list.json'
+    },
+    // 文章详情
+    {
+      name: 'article_detail',
+      url: '/api/blog/article/detail.json'
     },
     // 文章列表
     {
       name: 'article_full',
-      url: '/api/article/full.json'
+      url: '/api/blog/article/full.json'
     },
     // 文章添加
     {
       name: 'article_create',
-      url: '/api/article/create.json',
+      url: '/api/blog/article/create.json',
       options: {
         type: 'post'
       }
@@ -39,7 +44,7 @@ KISSY.add("app/models/modelmanager", function (S, BaseManager, BaseModel) {
     // 文章编辑
     {
       name: 'article_update',
-      url: '/api/article/update.json',
+      url: '/api/blog/article/update.json',
       options: {
         type: 'post'
       }
@@ -47,7 +52,7 @@ KISSY.add("app/models/modelmanager", function (S, BaseManager, BaseModel) {
     // 文章删除
     {
       name: 'article_remove',
-      url: '/api/article/remove.json',
+      url: '/api/blog/article/remove.json',
       options: {
         type: 'post'
       }
@@ -55,7 +60,7 @@ KISSY.add("app/models/modelmanager", function (S, BaseManager, BaseModel) {
     // 图片列表
     {
       name: 'picture_list',
-      url: '/api/pic/list.json'
+      url: '/api/tool/pic/list.json'
     },
     // 二维码
     {
