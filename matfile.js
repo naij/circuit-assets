@@ -2,6 +2,10 @@ var mat   = require('mat')
 var proxy = require('mat-proxy')
 var less  = require('mat-less')
 
+mat.env({
+  port: 8988
+})
+
 // 预编译less
 mat.task('less', function () {
   mat.url([/.*\.css/])

@@ -3,7 +3,6 @@ KISSY.add('app/ini', function (S, Magix) {
     'app/views/default': [
       {path: '/', isLogin: true},
       {path: '/manage/login'},
-      {path: '/manage/index', isLogin: true},
       {path: '/manage/article/list', isLogin: true},
       {path: '/manage/article/add', isLogin: true},
       {path: '/manage/article/edit', isLogin: true},

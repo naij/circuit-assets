@@ -15,7 +15,7 @@ KISSY.add('app/views/manage/login', function (S, Magix, View, MM) {
         postParams: formData
       }], function (errs, MesModel) {
         Magix.local('isLogined', true)
-        me.navigate('/manage/index')
+        me.navigate('/manage/article/list')
       }))
     }
   })
