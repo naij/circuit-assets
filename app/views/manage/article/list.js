@@ -64,7 +64,7 @@ KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, N
         width: 400, 
         top: top
       })
-      var viewName = 'app/views/util/confirm'
+      var viewName = 'app/views/common/confirm'
       var viewOptions = {
         confirmFn: function(){
           me.manage(MM.fetchAll([{
