@@ -1,8 +1,9 @@
-KISSY.add('app/views/sidenav', function (S, View, Node, MM) {
+KISSY.add('app/views/common/sidenav', function (S, View, Node, MM) {
   var $ = Node.all
 
   var PATHMAP = {
     '/manage/article/list': [
+      '/',
       '/manage/article/add',
       '/manage/article/edit'
     ],

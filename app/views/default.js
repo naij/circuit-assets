@@ -10,10 +10,8 @@ KISSY.add('app/views/default', function (S, View, VOM, UA, Node, R, Util) {
     render: function () {
       var me = this
       me.setViewPagelet({
-        //数据对象
       }, function () {
         me.mountMainFrame()
-        me.animateLoading()
       })
     },
     mountMainFrame: function () {
@@ -21,26 +19,16 @@ KISSY.add('app/views/default', function (S, View, VOM, UA, Node, R, Util) {
       var loc = me.location
       var pathname = loc.pathname
       var vframe = VOM.get('magix_vf_main')
-      if (vframe) {
-        if (pathname == '/') {
-          var viewPath = 'app/views/manage/index'
-        } else {
-          var pns = pathname.split('/')
-          pns.shift()
-          var folder = pns.shift() || 'home'
-          var view = pns.join('/') || 'index'
-          if (S.endsWith(view, '/')) {
-            view += 'index'
-          }
-          var viewPath = 'app/views/' + folder + '/' + view
-        }
-        
-        vframe.mountView(viewPath)
+      if (pathname == '/') {
+        var viewPath = 'app/views/manage/article/list'
+      } else {
+        var viewPath = 'app/views' + pathname
       }
+      
+      vframe.mountView(viewPath)
     },
     locationChange: function (e) {
       this.mountMainFrame()
-      this.animateLoading()
       Util.hideDialog()
       Util.hideToolTip()
     }

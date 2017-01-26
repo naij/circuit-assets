@@ -12,7 +12,7 @@ KISSY.add('app/ini', function (S, Magix) {
   }
   return {
     defaultView: 'app/views/default',
-    notFoundView: 'app/views/404',
+    notFoundView: 'app/views/common/404',
     routes: function (pathname) {
       if (!S.isEmptyObject(Routes)) {
         var s

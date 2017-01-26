@@ -1,4 +1,4 @@
-KISSY.add('app/views/util/confirm', function (S, View, MM) {
+KISSY.add('app/views/common/confirm', function (S, View, MM) {
   return View.extend({
     init: function (e) {
       this.manage('data', e)

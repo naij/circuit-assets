@@ -1,4 +1,4 @@
-KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, Node, Util) {
+KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, Node, Util, Moment) {
   var $ = Node.all
 
   return View.extend({
@@ -87,6 +87,9 @@ KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, N
     },
     renderer: {
       list: {
+        createdAt: function (self) {
+          return Moment(self.createdAt).format('YYYY-MM-DD HH:MM')
+        },
         status: function(self) {
           switch (this.status) {
             case 0:
@@ -107,6 +110,7 @@ KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, N
     'magix/vom',
     'magix/router',
     'node',
-    'app/util/util'
+    'app/util/util',
+    'app/libs/moment'
   ]
 })
