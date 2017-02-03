@@ -7,6 +7,7 @@
   <table class="table" bx-name="tables" bx-tmpl="list" bx-datakey="list">
     <thead>
       <tr {{^list}}class="no-data"{{/list}}>
+        <th class="left" width="80">id</th>
         <th class="left" width="150">日期</th>
         <th class="left" width="150">spiderName</th>
         <th class="left">url</th>
@@ -18,6 +19,7 @@
     <tbody>
       {{#list}}
       <tr>
+        <td class="left">{{id}}</td>
         <td class="left">{{list_createdAt}}</td>
         <td class="left">{{spiderName}}</td>
         <td class="left">{{url}} <a href="/manage/spider/cache?htmlid={{htmlId}}" class="color-blue" target="_blank" vclick-ignore="true">[网页快照]</a></td>
