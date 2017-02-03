@@ -7,6 +7,7 @@ KISSY.add('app/ini', function (S, Magix) {
       {path: '/manage/article/add', isLogin: true},
       {path: '/manage/article/edit', isLogin: true},
       {path: '/manage/picture/list', isLogin: true},
+      {path: '/manage/spider/list', isLogin: true},
       {path: '/manage/tool/list', isLogin: true}
     ]
   }

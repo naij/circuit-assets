@@ -1,0 +1,38 @@
+<div class="page-header clearfix">
+  <div class="title-bar">
+    <h2 class="title">爬虫记录</h2>
+  </div>
+</div>
+<div class="page-body table-container">
+  <table class="table" bx-name="tables" bx-tmpl="list" bx-datakey="list">
+    <thead>
+      <tr {{^list}}class="no-data"{{/list}}>
+        <th class="left" width="150">日期</th>
+        <th class="left" width="150">spiderName</th>
+        <th class="left">url</th>
+        <th class="left" width="120">htmlId</th>
+        <th class="left" width="120">appId</th>
+        <th class="left" width="100">count</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list}}
+      <tr>
+        <td class="left">{{list_createdAt}}</td>
+        <td class="left">{{spiderName}}</td>
+        <td class="left">{{url}}</td>
+        <td class="left">{{htmlId}}</td>
+        <td class="left">{{appId}}</td>
+        <td class="left">{{{count}}}</td>
+      </tr>
+      {{/list}}
+      {{^list}}
+      <tr class="none">
+        <td colspan="6">
+          暂无数据
+        </td>
+      </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>

@@ -62,6 +62,11 @@ KISSY.add("app/models/modelmanager", function (S, BaseManager, BaseModel) {
       name: 'picture_list',
       url: '/api/tool/pic/list.json'
     },
+    // 爬虫列表
+    {
+      name: 'spider_record_list',
+      url: '/api/tool/spider/list.json'
+    },
     // 二维码
     {
       name: 'tool_qr',
