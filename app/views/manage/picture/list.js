@@ -103,7 +103,7 @@ KISSY.add('app/views/manage/picture/list', function (S, View, MM, VOM, Router, N
     renderer: {
       list: {
         createdAt: function (self) {
-          return Moment(this.createdAt).format('YYYY-MM-DD HH:MM')
+          return Moment(this.createdAt).format('YYYY-MM-DD HH:mm:ss')
         }
       }
     }
