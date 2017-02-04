@@ -9,16 +9,23 @@ KISSY.add('app/views/manage/spider/list', function (S, View, MM, VOM, Router, No
       var me = this
       var loc = me.location
       var params = loc.params
+      var pageNo = params.pageNo || 1
+      var pageSize = params.pageSize || 50
 
       me.manage(MM.fetchAll([{
-        name: "spider_record_list"
+        name: "spider_record_list",
+        urlParams: {
+          pageNo: pageNo,
+          pageSize: pageSize
+        }
       }], function (errs, MesModel) {
         var data = MesModel.get('data')
 
         me.setViewPagelet({
-          list: data
-        }, function () {
-          // me.components()
+          list: data.list,
+          pageNo: pageNo,
+          pageSize: pageSize,
+          totalCount: data.totalCount
         })
       }))
     },

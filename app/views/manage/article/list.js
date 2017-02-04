@@ -10,6 +10,8 @@ KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, N
       var loc = me.location
       var params = loc.params
       var typeId = params.typeId || 'f2e'
+      var pageNo = params.pageNo || 1
+      var pageSize = params.pageSize || 50
       var typeList = [
         {
           typeId: 'f2e',
@@ -35,14 +37,19 @@ KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, N
       me.manage(MM.fetchAll([{
         name: 'article_actived_list',
         urlParams: {
-          type: typeId
+          type: typeId,
+          pageNo: pageNo,
+          pageSize: pageSize
         }
       }], function (errs, MesModel) {
         var data = MesModel.get('data')
 
         me.setViewPagelet({
-          list: data,
-          typeList: typeList
+          list: data.list,
+          typeList: typeList,
+          pageNo: pageNo,
+          pageSize: pageSize,
+          totalCount: data.totalCount
         }, function () {
           me.components()
         })
@@ -54,6 +61,11 @@ KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, N
       var typeDropdown = pagelet.getBrick('J_type_dropdown')
       typeDropdown.on('selected', function (ev) {
         me.navigate('typeId=' + ev.value)
+      })
+
+      var pagination = pagelet.getBrick('J_pagination')
+      pagination && pagination.on('gotoPage', function(ev) {
+        me.navigate('pageNo=' + ev.index)
       })
     },
     'del<click>': function (e) {

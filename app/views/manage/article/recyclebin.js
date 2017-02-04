@@ -7,14 +7,25 @@ KISSY.add('app/views/manage/article/recyclebin', function (S, View, MM, VOM, Rou
     },
     render: function () {
       var me = this
+      var loc = me.location
+      var params = loc.params
+      var pageNo = params.pageNo || 1
+      var pageSize = params.pageSize || 50
 
       me.manage(MM.fetchAll([{
-        name: 'article_removed_list'
+        name: 'article_removed_list',
+        urlParams: {
+          pageNo: pageNo,
+          pageSize: pageSize
+        }
       }], function (errs, MesModel) {
         var data = MesModel.get('data')
 
         me.setViewPagelet({
-          list: data
+          list: data.list,
+          pageNo: pageNo,
+          pageSize: pageSize,
+          totalCount: data.totalCount
         })
       }))
     },
