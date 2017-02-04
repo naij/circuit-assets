@@ -1,4 +1,4 @@
-KISSY.add('app/views/manage/picture/list', function (S, View, MM, VOM, Router, Node, Util, Calendar) {
+KISSY.add('app/views/manage/picture/list', function (S, View, MM, VOM, Router, Node, Util, Calendar, Moment) {
   var $ = Node.all
 
   return View.extend({
@@ -99,6 +99,13 @@ KISSY.add('app/views/manage/picture/list', function (S, View, MM, VOM, Router, N
         }
       }
       Util.showDialog(dialogConfig, viewName, viewOptions)
+    },
+    renderer: {
+      list: {
+        createdAt: function (self) {
+          return Moment(this.createdAt).format('YYYY-MM-DD HH:MM')
+        }
+      }
     }
   })
 },{
@@ -109,6 +116,7 @@ KISSY.add('app/views/manage/picture/list', function (S, View, MM, VOM, Router, N
     'magix/router',
     'node',
     'app/util/util',
-    'brix/gallery/calendar/index'
+    'brix/gallery/calendar/index',
+    'app/libs/moment'
   ]
 })

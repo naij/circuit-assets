@@ -1,4 +1,4 @@
-KISSY.add('app/views/manage/picture/add', function (S, View, MM, VOM, Router, Node, Util) {
+KISSY.add('app/views/manage/picture/add', function (S, View, MM, Magix, VOM, Router, Node, Util) {
   var $ = Node.all
 
   return View.extend({
@@ -68,22 +68,20 @@ KISSY.add('app/views/manage/picture/add', function (S, View, MM, VOM, Router, No
         if (index < files.length && index != files.length) {
           // 创建FormData()对象
           var fd = new FormData()
-          fd.append("author", "Shiv Kumar")
-          fd.append("name", "Html 5 File API/FormData")
-          // 文件对象 file      
-          fd.append("pic", files[index])
+          // 文件对象 file 
+          fd.append('pic', files[index])
           // 准备使用ajax上传
           var xhr = new XMLHttpRequest()
           // 进度条      
-          xhr.upload.addEventListener("progress", uploadProgress, false)
+          xhr.upload.addEventListener('progress', uploadProgress, false)
           // 上传完成
-          xhr.addEventListener("load", uploadComplete, false)
+          xhr.addEventListener('load', uploadComplete, false)
           // 错误信息
-          xhr.addEventListener("error", uploadFailed, false)
+          xhr.addEventListener('error', uploadFailed, false)
           // 取消，此功能没有做
-          xhr.addEventListener("abort", uploadCanceled, false)
+          xhr.addEventListener('abort', uploadCanceled, false)
           // 上传
-          xhr.open("POST", "/api/pic/create")
+          xhr.open('POST', '/api/tool/pic/create.json?_csrf=' + Magix.local('csrf'))
           // 发送
           xhr.send(fd)
         }
@@ -142,6 +140,7 @@ KISSY.add('app/views/manage/picture/add', function (S, View, MM, VOM, Router, No
   requires:[
     'mxext/view',
     'app/models/modelmanager',
+    'magix/magix',
     'magix/vom',
     'magix/router',
     'node',
