@@ -33,7 +33,7 @@ KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, N
       })
 
       me.manage(MM.fetchAll([{
-        name: "article_full",
+        name: 'article_actived_list',
         urlParams: {
           type: typeId
         }
@@ -68,7 +68,7 @@ KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, N
       var viewOptions = {
         confirmFn: function(){
           me.manage(MM.fetchAll([{
-            name: "article_remove",
+            name: 'article_remove',
             postParams: {
               id: e.params.id
             }
@@ -87,8 +87,8 @@ KISSY.add('app/views/manage/article/list', function (S, View, MM, VOM, Router, N
     },
     renderer: {
       list: {
-        createdAt: function (self) {
-          return Moment(this.createdAt).format('YYYY-MM-DD HH:mm:ss')
+        updatedAt: function (self) {
+          return Moment(this.updatedAt).format('YYYY-MM-DD HH:mm:ss')
         },
         status: function(self) {
           switch (this.status) {

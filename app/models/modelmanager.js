@@ -30,8 +30,13 @@ KISSY.add("app/models/modelmanager", function (S, BaseManager, BaseModel) {
     },
     // 文章列表
     {
-      name: 'article_full',
-      url: '/api/blog/article/full.json'
+      name: 'article_actived_list',
+      url: '/api/blog/article/actived_list.json'
+    },
+    // 文章删除列表
+    {
+      name: 'article_removed_list',
+      url: '/api/blog/article/removed_list.json'
     },
     // 文章添加
     {
@@ -53,6 +58,14 @@ KISSY.add("app/models/modelmanager", function (S, BaseManager, BaseModel) {
     {
       name: 'article_remove',
       url: '/api/blog/article/remove.json',
+      options: {
+        type: 'post'
+      }
+    },
+    // 文章彻底删除
+    {
+      name: 'article_remove_complete',
+      url: '/api/blog/article/remove_complete.json',
       options: {
         type: 'post'
       }

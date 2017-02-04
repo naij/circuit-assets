@@ -5,7 +5,8 @@ KISSY.add('app/views/common/sidenav', function (S, View, Node, MM) {
     '/manage/article/list': [
       '/',
       '/manage/article/add',
-      '/manage/article/edit'
+      '/manage/article/edit',
+      '/manage/article/recyclebin'
     ],
     '/manage/picture/list': [
       '/manage/picture/add'

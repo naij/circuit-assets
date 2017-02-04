@@ -5,6 +5,8 @@
 </div>
 <div class="page-body table-container">
   <div class="toolbar clearfix">
+    <a href="/manage/article/recyclebin" class="btn btn-xsmall fr">回收站</a>
+
     <div bx-name="dropdown" style="width:150px;" class="dropdown" hidefocus="true" id="J_type_dropdown">
       {{#typeList}}
         {{#selected}}
@@ -36,7 +38,7 @@
       {{#list}}
       <tr>
         <td class="left">{{title}}</td>
-        <td class="left">{{list_createdAt}}</td>
+        <td class="left">{{list_updatedAt}}</td>
         <td class="left">{{{list_status}}}</td>
         <td class="center">
           <a href="/manage/article/edit?id={{id}}" class="color-blue">编辑</a>

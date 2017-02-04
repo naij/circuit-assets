@@ -1,0 +1,35 @@
+<div class="page-header clearfix">
+  <div class="title-bar">
+    <h2 class="title">文章回收站</h2>
+  </div>
+</div>
+<div class="page-body table-container">
+  <table class="table" bx-name="tables" bx-tmpl="list" bx-datakey="list">
+    <thead>
+      <tr {{^list}}class="no-data"{{/list}}>
+        <th class="left">文章名称</th>
+        <th class="left" width="150">删除时间</th>
+        <th class="center" width="100">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list}}
+      <tr>
+        <td class="left">{{title}}</td>
+        <td class="left">{{list_updatedAt}}</td>
+        <td class="center">
+          <a href="/manage/article/edit?id={{id}}" class="color-blue">编辑</a>
+          <a href="#" mx-click="del{id:{{id}}}" class="color-blue">彻底删除</a>
+        </td>
+      </tr>
+      {{/list}}
+      {{^list}}
+      <tr class="none">
+        <td colspan="4">
+          暂无数据
+        </td>
+      </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
