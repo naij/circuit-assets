@@ -42,7 +42,7 @@ gulp.task('compress', ['clean'], function() {
       path.basename += "-min"
     }))
     .pipe(uglify({
-      output: {ascii_only:true}
+      output: {ascii_only: true}
     }))
     .pipe(gulp.dest('./build/app/'))
 
