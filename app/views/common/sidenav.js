@@ -10,6 +10,9 @@ KISSY.add('app/views/common/sidenav', function (S, View, Node, MM) {
     ],
     '/manage/picture/list': [
       '/manage/picture/add'
+    ],
+    '/manage/assets/list': [
+      '/manage/assets/detail'
     ]
   }
 
