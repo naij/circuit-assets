@@ -133,7 +133,7 @@ KISSY.add('app/extview', function(S, MV, Base, Node) {
                 me.owner.unmountZoneVframes(e.node[0])
               })
               pagelet.on('afterRefreshTmpl', function(e) {
-                me.owner.mountZoneVframes(e.node[0],null,true)
+                me.owner.mountZoneVframes(e.node[0], null, true)
               })
               pagelet.ready(function() {
                 if(sign == me.sign) {
