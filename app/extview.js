@@ -136,7 +136,7 @@ KISSY.add('app/extview', function(S, MV, Base, Node) {
                 me.owner.mountZoneVframes(e.node[0], null, true)
               })
               pagelet.ready(function() {
-                if(sign == me.sign) {
+                if (sign == me.sign) {
                   ready.call(me, pagelet)
                 }
               })
