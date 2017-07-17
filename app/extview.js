@@ -156,7 +156,7 @@ KISSY.add('app/extview', function(S, MV, Base, Node) {
               var mn = mcName,
               wn = wrapperName
               var fn = rr[mn][wn]
-              data[mn + "_" + wn] = function() {
+              data[mn + '_' + wn] = function() {
                 return fn.call(this, self, mn)
               }
             })()
