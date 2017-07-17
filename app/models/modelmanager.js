@@ -70,6 +70,16 @@ KISSY.add("app/models/modelmanager", function (S, BaseManager, BaseModel) {
         type: 'post'
       }
     },
+    // 发布列表
+    {
+      name: 'assets_list',
+      url: '/api/tool/assets/list.json'
+    },
+    // 发布详情
+    {
+      name: 'assets_detail',
+      url: '/api/tool/assets/detail.json'
+    },
     // 图片列表
     {
       name: 'picture_list',
