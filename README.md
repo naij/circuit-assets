@@ -8,3 +8,4 @@
 + git push origin daily/0.0.1
 
 + git tag publish/0.0.1
++ git push origin publish/0.0.1
